@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Assignment</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="top-margin">
+        <h1>Things to do</h1>
+        <h1 id="todate"></h1>
+    </div>
+
+    <div id="todo">
+    <input type="text" id="enterData" placeholder="What do you need to do?" required="required">
+    <button onclick="createEle()" id="addbtn">+ ADD</button>
+    </div>
+    <div id="toast">
+        <h5>Enter Valid Input</h5>
+    </div>
+     <div id="todo-table">
+         <table id="container" >
+
+         </table>
+     </div>
+    
+     <script>
+
+         //show current time
+         var myDate = new Date().toDateString();
+         document.getElementById("todate").innerHTML = myDate;
+
+         //function for generating elements
+         function createEle() {
+
+         let data = document.getElementById("enterData");
+         let err = document.getElementById("toast");
+
+         if(!data.value.trim() == ""){
+             
+         err.style.visibility = "hidden"
+         table1 = document.getElementById("container");
+
+         //add row in table
+         trElement = document.createElement("tr")
+         table1.appendChild(trElement)
+
+         //add element td in row
+         tdElement = document.createElement("td");
+         tdElement.innerHTML = data.value;
+         trElement.appendChild(tdElement);
+
+         //remove button td in row
+         tdBtn_Remove = document.createElement("td");
+         tdBtn_Remove.innerHTML = '<button onclick="remove(event)"> Remove </button>' ;
+         trElement.appendChild(tdBtn_Remove);
+
+          //edit button td in row
+         tdBtn_Edit = document.createElement("td");
+         tdBtn_Edit.innerHTML = '<button onclick="editData(event)"> Edit </button>' ;
+         trElement.appendChild(tdBtn_Edit);
+
+         //reset input field text
+         document.getElementById('enterData').value='';
+            }
+            else {
+                err.style.visibility = "visible";
+            }
+        }
+        function remove(e){
+        //    table1.removeChild(table1.childNodes[0]);
+            table1.removeChild(e.target.parentNode.parentNode);
+        }
+        function editData(e){
+        //    table1.removeChild(table1.childNodes[0]);
+            let newValue = prompt("Enter New Todo Data");
+            e.target.parentNode.parentNode.firstChild.innerHTML = newValue;
+        }
+
+     </script>
+</body>
+</html>

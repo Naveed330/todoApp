@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input {
+    padding: 10PX 20%;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+body{
+    background-color: rgb(209, 209, 209);
+}
+#top-margin {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+#todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#addbtn {
+    padding: 10px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    border-left: 1px solid rgb(202, 202, 202);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#todo-table {
+    display: flex;
+    justify-content: center;
+}
+table {
+    margin-top: 5px;
+    border-collapse:separate;
+    border-spacing: 0px 10px;
+ 
+    color: white;
+    font-size: large;
+    
+}
+tr,td {
+    border-top: 1px solid rgb(99, 99, 99);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    padding: 10px 10px;
+    margin-top: 5px;
+}
+tr {
+    border-radius: 60px;
+    background: linear-gradient(90deg, rgba(255,38,0,1) 0%, rgba(255,111,0,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#container > tr > td > button {
+    background-color: rgb(173, 0, 0);
+    color: white;
+    padding: 8px 14px;
+    border: 1px solid  rgb(202, 202, 202);
+    border-radius: 6px;
+    float: right;
+}
+#toast {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    color: red;
+    visibility: hidden;
+}
+tr:hover {
+    padding: 15px 15px;
+    background: linear-gradient(90deg, rgb(114, 27, 0) 0%, rgba(255,38,0,1) 100%);
+}
